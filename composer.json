@@ -1,0 +1,43 @@
+{
+    "name": "crosseno/core",
+    "description": "Language-independent domain model, validation, and snapshots for Crosseno.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crosseno\\Core\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Crosseno\\Core\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --no-progress",
+        "lint": "php-cs-fixer fix --dry-run --diff",
+        "format": "php-cs-fixer fix",
+        "check": [
+            "@lint",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "allow-plugins": {},
+        "sort-packages": true
+    },
+    "support": {
+        "issues": "https://github.com/Crosseno/core/issues",
+        "source": "https://github.com/Crosseno/core"
+    }
+}
