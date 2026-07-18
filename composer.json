@@ -1,6 +1,6 @@
 {
     "name": "crosseno/core",
-    "description": "Language-independent domain model, validation, and snapshots for Crosseno.",
+    "description": "Language-independent domain objects, immutable grids, structural validation, and deterministic snapshots for Crosseno.",
     "type": "library",
     "license": "MIT",
     "require": {

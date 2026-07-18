@@ -1,6 +1,8 @@
 # Crosseno Core
 
-Language-independent crossword domain objects, immutable grids, structural validation, and deterministic core snapshots for PHP 8.5 and later. The package has no runtime dependency beyond PHP.
+Language-independent domain objects, immutable grids, structural validation, and deterministic snapshots for Crosseno.
+
+The package requires PHP `^8.5` and has no other runtime dependencies.
 
 ## Installation
 
