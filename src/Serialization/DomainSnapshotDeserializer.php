@@ -33,6 +33,7 @@ final readonly class DomainSnapshotDeserializer
         }
 
         try {
+            DuplicateJsonKeyGuard::assertNone($json);
             $payload = json_decode($json, true, 64, JSON_THROW_ON_ERROR);
         } catch (\JsonException $exception) {
             throw new SerializationFailed('The core snapshot is not valid JSON.', previous: $exception);

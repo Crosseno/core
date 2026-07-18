@@ -71,6 +71,17 @@ final class DomainSnapshotTest extends TestCase
         );
     }
 
+    public function testDuplicateObjectKeysAreRejectedBeforeDecoding(): void
+    {
+        $this->expectException(SerializationFailed::class);
+        $this->expectExceptionMessage('duplicate key "version"');
+
+        (new DomainSnapshotDeserializer())->deserialize(
+            '{"schema":"crosseno-core-snapshot","version":1,"version":1,"duplicatePlacementPolicy":"forbid","grid":{"rows":1,"columns":1,"cells":[{"state":"empty","symbol":null}]},"entries":[]}',
+            ResourceLimits::standard(),
+        );
+    }
+
     public function testDimensionsAreLimitedBeforeCellConstruction(): void
     {
         $limits = new ResourceLimits(2, 2, 4, 2, 4, 10_000);
